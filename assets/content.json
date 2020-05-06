@@ -1,0 +1,282 @@
+[
+    {
+        "id": 1,
+        "description": "Matemática",
+        "summary": "Este é um quiz para o tema de Matematica e ficara disponivel ate a proxima quinta feira",
+        "questions": [
+            {
+                "id": 1,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 1,
+                        "description": "Indo ao mercado",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 2,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 3,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 1,
+                        "correct": true
+                    },
+                    {
+                        "id": 4,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 1,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "description": "Qual time é o atual campeão brasileiro?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 5,
+                        "description": "Palmeiras",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 6,
+                        "description": "Corinthians",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 7,
+                        "description": "Flamengo",
+                        "questionId": 2,
+                        "correct": true
+                    },
+                    {
+                        "id": 8,
+                        "description": "São Paulo",
+                        "questionId": 2,
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "imageUrl": "https://i.dlpng.com/static/png/4282238-maths-multiple-multiplication-icon-with-png-and-vector-format-maths-png-512_512_preview.webp"
+    },
+    {
+        "id": 2,
+        "description": "Português",
+        "summary": "Este é um quiz para o tema de Português e ficará disponível até a próxima sexta feira",
+        "questions": [
+            {
+                "id": 3,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 2,
+                "options": [
+                    {
+                        "id": 1,
+                        "description": "Indo ao mercado",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 2,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 3,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 1,
+                        "correct": true
+                    },
+                    {
+                        "id": 4,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 1,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 2,
+                "options": [
+                    {
+                        "id": 5,
+                        "description": "Indo ao mercado",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 6,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 7,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 2,
+                        "correct": true
+                    },
+                    {
+                        "id": 8,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 2,
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "imageUrl": "https://www.todamateria.com.br/layout/frontoffice/img/h/linguaportuguesa.jpg"
+    },
+    {
+        "id": 3,
+        "description": "Ciencies",
+        "summary": "Ciencies Ciencies CienciesCi enci  e  sCien cies Ci encie sCienciesCi enciesCie nciesCienciesC iencies",
+        "questions": [
+            {
+                "id": 1,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 1,
+                        "description": "Indo ao mercado",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 2,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 3,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 1,
+                        "correct": true
+                    },
+                    {
+                        "id": 4,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 1,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 5,
+                        "description": "Indo ao mercado",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 6,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 7,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 2,
+                        "correct": true
+                    },
+                    {
+                        "id": 8,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 2,
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "imageUrl": null
+    },
+    {
+        "id": 4,
+        "description": "História",
+        "summary": "História História História v Históriav v História História História HistóriaHistóriaHistória História",
+        "questions": [
+            {
+                "id": 1,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 1,
+                        "description": "Indo ao mercado",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 2,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 1,
+                        "correct": false
+                    },
+                    {
+                        "id": 3,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 1,
+                        "correct": true
+                    },
+                    {
+                        "id": 4,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 1,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "description": "Qual a melhor maneira de evitar o contágio da COVID-19?",
+                "quizId": 1,
+                "options": [
+                    {
+                        "id": 5,
+                        "description": "Indo ao mercado",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 6,
+                        "description": "Sair de casa normalmente",
+                        "questionId": 2,
+                        "correct": false
+                    },
+                    {
+                        "id": 7,
+                        "description": "Ficando ao máximo em casa e, se precisar sair, usar máscara",
+                        "questionId": 2,
+                        "correct": true
+                    },
+                    {
+                        "id": 8,
+                        "description": "Não tem melhor maneira",
+                        "questionId": 2,
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "imageUrl": "https://1.bp.blogspot.com/-0qbkNEXSdtQ/T4Snv_UbSZI/AAAAAAAAAWo/hTsDXH3y-8E/s1600/historia.jpg"
+    }
+]
