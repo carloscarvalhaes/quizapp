@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:get/get.dart';
 import 'package:oktoast/oktoast.dart';
 
 class AppWidget extends StatelessWidget {
@@ -9,7 +8,7 @@ class AppWidget extends StatelessWidget {
     return OKToast(
       position: ToastPosition.bottom,
       child: MaterialApp(
-        navigatorKey: Get.key,
+        navigatorKey: Modular.navigatorKey,
         title: 'Quiz',
         theme: ThemeData(
           primarySwatch: Colors.blue,

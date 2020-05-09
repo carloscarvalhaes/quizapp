@@ -9,6 +9,13 @@ part of 'quiz_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$QuizController on _QuizControllerBase, Store {
+  Computed<StoreState> _$quizStateComputed;
+
+  @override
+  StoreState get quizState =>
+      (_$quizStateComputed ??= Computed<StoreState>(() => super.quizState))
+          .value;
+
   final _$_quizFutureAtom = Atom(name: '_QuizControllerBase._quizFuture');
 
   @override
@@ -52,7 +59,8 @@ mixin _$QuizController on _QuizControllerBase, Store {
 
   @override
   String toString() {
-    final string = 'quizzes: ${quizzes.toString()}';
+    final string =
+        'quizzes: ${quizzes.toString()},quizState: ${quizState.toString()}';
     return '{$string}';
   }
 }

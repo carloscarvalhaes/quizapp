@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:quiz/app/utils/SizeUtils.dart';
 import 'package:quiz/app/utils/ThemeUtils.dart';
 import 'home_controller.dart';
 
@@ -16,9 +17,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
   @override
   Widget build(BuildContext context) {
-
     ThemeUtils.init(context);
-
+    SizeUtils.init(context);
+    Future.delayed(Duration.zero, () => Modular.to.pushReplacementNamed('/'));
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
