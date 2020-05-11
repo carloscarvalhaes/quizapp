@@ -78,6 +78,24 @@ mixin _$QuestionController on _QuestionControllerBase, Store {
     }, _$selectedOptAtom, name: '${_$selectedOptAtom.name}_set');
   }
 
+  final _$isLastQuestionAtom =
+      Atom(name: '_QuestionControllerBase.isLastQuestion');
+
+  @override
+  bool get isLastQuestion {
+    _$isLastQuestionAtom.context.enforceReadPolicy(_$isLastQuestionAtom);
+    _$isLastQuestionAtom.reportObserved();
+    return super.isLastQuestion;
+  }
+
+  @override
+  set isLastQuestion(bool value) {
+    _$isLastQuestionAtom.context.conditionallyRunInAction(() {
+      super.isLastQuestion = value;
+      _$isLastQuestionAtom.reportChanged();
+    }, _$isLastQuestionAtom, name: '${_$isLastQuestionAtom.name}_set');
+  }
+
   final _$_QuestionControllerBaseActionController =
       ActionController(name: '_QuestionControllerBase');
 
@@ -128,7 +146,7 @@ mixin _$QuestionController on _QuestionControllerBase, Store {
   @override
   String toString() {
     final string =
-        'count: ${count.toString()},questions: ${questions.toString()},currentQuestion: ${currentQuestion.toString()},selectedOpt: ${selectedOpt.toString()}';
+        'count: ${count.toString()},questions: ${questions.toString()},currentQuestion: ${currentQuestion.toString()},selectedOpt: ${selectedOpt.toString()},isLastQuestion: ${isLastQuestion.toString()}';
     return '{$string}';
   }
 }

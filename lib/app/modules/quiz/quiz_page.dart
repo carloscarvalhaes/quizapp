@@ -67,7 +67,7 @@ class _QuizPageState extends ModularState<QuizPage, QuizController> {
                 onPressed: () {
                   Modular.to.pushNamed(
                     '/question',
-                    arguments: controller.quizzes[index].questions,
+                    arguments: controller.quizzes[index],
                   );
                 },
               );

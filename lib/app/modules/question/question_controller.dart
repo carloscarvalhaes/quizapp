@@ -1,3 +1,4 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:quiz/app/model/Option.dart';
 import 'package:quiz/app/model/Question.dart';
@@ -21,6 +22,9 @@ abstract class _QuestionControllerBase with Store {
 
   List<Option> selectedOptions = List();
 
+  @observable
+  bool isLastQuestion = false;
+
   @action
   nextQuestion() {
     if (count < questions.length - 1) {
@@ -41,31 +45,34 @@ abstract class _QuestionControllerBase with Store {
   }
 
   @action
-  selectedOption(int index){
+  selectedOption(int index) {
     selectedOpt = currentQuestion.options[index];
   }
 
   @action
-  getQuestions(List<Question> qs){
+  getQuestions(List<Question> qs) {
     this.questions = qs;
     updateQuestion();
   }
 
-  clearOption(){
+  clearOption() {
     selectedOpt = null;
   }
 
-  updateQuestion(){
+  updateQuestion() {
     currentQuestion = questions[count];
     if (selectedOpt == null) {
       return;
     }
-    if (selectedOptions.contains(selectedOpt)) {
-      return;
+    if (!selectedOptions.contains(selectedOpt)) {
+      selectedOptions.add(selectedOpt);
     }
-    selectedOptions.add(selectedOpt);
-    print(questions.last.description);
-    
-  }
+    if (isLastQuestion) {
+      Modular.to.pushReplacementNamed('/result', arguments: selectedOptions);
+    }
 
+    if ((questions.last.id == currentQuestion.id) && isLastQuestion == false ) {
+      isLastQuestion = true;
+    }
+  }
 }

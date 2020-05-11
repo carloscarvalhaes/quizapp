@@ -10,7 +10,7 @@ class QuestionModule extends ChildModule {
 
   @override
   List<Router> get routers => [
-        Router(Modular.initialRoute, child: (_, args) => QuestionPage(qList: args.data))
+        Router(Modular.initialRoute, child: (_, args) => QuestionPage(selectedQuiz: args.data))
       ];
 
   static Inject get to => Inject<QuestionModule>.of();

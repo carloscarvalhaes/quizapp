@@ -4,13 +4,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 import 'package:quiz/app/components/AnswerButton.dart';
 import 'package:quiz/app/model/Option.dart';
-import 'package:quiz/app/model/Question.dart';
+import 'package:quiz/app/model/Quiz.dart';
 import 'package:quiz/app/utils/SizeUtils.dart';
 import 'question_controller.dart';
 
 class QuestionPage extends StatefulWidget {
-  final List<Question> qList;
-  const QuestionPage({Key key, this.qList}) : super(key: key);
+  final Quiz selectedQuiz;
+  const QuestionPage({Key key, this.selectedQuiz}) : super(key: key);
 
   @override
   _QuestionPageState createState() => _QuestionPageState();
@@ -18,19 +18,24 @@ class QuestionPage extends StatefulWidget {
 
 class _QuestionPageState
     extends ModularState<QuestionPage, QuestionController> {
-
   ReactionDisposer _disposer;
   Option sel;
 
   @override
   void initState() {
     super.initState();
-    controller.getQuestions(widget.qList);
-    _disposer ??= reaction((_) => controller.selectedOpt, (sel){
+    controller.getQuestions(widget.selectedQuiz.questions);
+    _disposer ??= reaction((_) => controller.selectedOpt, (sel) {
       setState(() {
         sel = this.sel;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _disposer.reaction.dispose();
+    super.dispose();
   }
 
   @override
@@ -40,7 +45,7 @@ class _QuestionPageState
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              'Quiz Tema',
+              'Quiz ${widget.selectedQuiz.description}',
             ),
           ),
           body: Center(
@@ -91,11 +96,12 @@ class _QuestionPageState
     );
   }
 
-  bool isSelected(index){
+  bool isSelected(index) {
     if (controller.selectedOpt == null) {
       return false;
     }
-    return controller.currentQuestion.options[index].id == controller.selectedOpt.id;
+    return controller.currentQuestion.options[index].id ==
+        controller.selectedOpt.id;
   }
 
   Widget _makeQuestionsCounter() {
@@ -135,13 +141,10 @@ class _QuestionPageState
             child: SizedBox(),
           ),
           RaisedButton(
-            onPressed: controller.selectedOpt == null
-                ? null
-                : controller.nextQuestion,
+            onPressed:
+                controller.selectedOpt == null ? null : controller.nextQuestion,
             child: Text(
-              controller.count == controller.questions.length - 1
-                  ? 'Finalizar'
-                  : 'Próxima',
+              controller.isLastQuestion ? 'Finalizar' : 'Próxima',
             ),
           )
         ],
