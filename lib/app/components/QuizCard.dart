@@ -52,7 +52,7 @@ class QuizCard extends Card {
               ],
             ),
           ),
-          color: Colors.blueGrey[300],
+          color: Colors.purple[200],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),

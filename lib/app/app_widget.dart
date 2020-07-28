@@ -12,6 +12,8 @@ class AppWidget extends StatelessWidget {
         title: 'Quiz',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          primaryColor: Color(0xFF7159C1),
+          accentColor: Colors.amberAccent
         ),
         initialRoute: '/',
         onGenerateRoute: Modular.generateRoute,

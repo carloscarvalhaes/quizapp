@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:quiz/app/core/QuizDio.dart';
 import 'package:quiz/app/model/Quiz.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' as rootBundle;

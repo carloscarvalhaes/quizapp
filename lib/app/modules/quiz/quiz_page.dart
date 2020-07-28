@@ -29,10 +29,9 @@ class _QuizPageState extends ModularState<QuizPage, QuizController> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.purple,
       ),
       body: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(left: 5, right: 5),
         child: Center(
           child: Observer(
             builder: (_) {

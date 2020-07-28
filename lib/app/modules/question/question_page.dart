@@ -6,6 +6,7 @@ import 'package:quiz/app/components/AnswerButton.dart';
 import 'package:quiz/app/model/Option.dart';
 import 'package:quiz/app/model/Quiz.dart';
 import 'package:quiz/app/utils/SizeUtils.dart';
+import 'package:quiz/app/utils/ThemeUtils.dart';
 import 'question_controller.dart';
 
 class QuestionPage extends StatefulWidget {
@@ -43,23 +44,20 @@ class _QuestionPageState
     return Observer(
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Quiz ${widget.selectedQuiz.description}',
-            ),
-          ),
-          body: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _makeQuestion(),
-                SizedBox(height: 30),
-                _makeOptions(),
-                SizedBox(height: 30),
-                _makeQuestionsCounter(),
-                _makeDirectionButtons(),
-              ],
+          body: SingleChildScrollView(
+            child: Center(
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _makeQuestion(),
+                    _makeOptions(),
+                    _makeQuestionsCounter(),
+                    _makeDirectionButtons(),
+                  ],
+                ),
+              ),
             ),
           ),
         );
@@ -68,21 +66,35 @@ class _QuestionPageState
   }
 
   Widget _makeQuestion() {
-    return Text(
-      controller.currentQuestion.description,
-      textAlign: TextAlign.center,
-      style: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
+    return Container(
+      width: SizeUtils.widthScreen,
+      color: ThemeUtils.primaryColor,
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 150),
+          Text(
+            controller.currentQuestion.description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 30)
+        ],
       ),
     );
   }
 
   Widget _makeOptions() {
     return Container(
-      height: 251,
+      padding: EdgeInsets.only(right: 20, left: 20, top: 30),
+      height: 300,
       width: SizeUtils.widthScreen,
       child: ListView.builder(
+        shrinkWrap: true,
+        padding: EdgeInsets.only(top: 5, bottom: 5),
         scrollDirection: Axis.vertical,
         itemCount: controller.currentQuestion.options.length,
         itemBuilder: (BuildContext context, int index) {
@@ -105,46 +117,47 @@ class _QuestionPageState
   }
 
   Widget _makeQuestionsCounter() {
-    return Container(
-      height: 30,
-      width: SizeUtils.widthScreen,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.questions.length,
-        itemBuilder: (BuildContext context, int index) {
-          if (index == controller.count) {
-            return Icon(Icons.radio_button_checked);
-          }
-          return Icon(Icons.radio_button_unchecked);
-        },
-      ),
+    return Center(
+      child: Container(),
     );
   }
 
   Widget _makeDirectionButtons() {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 50, right: 15, left: 15, top: 20),
+      padding: const EdgeInsets.only(
+        bottom: 50,
+      ),
       child: Row(
         children: <Widget>[
-          RaisedButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+          FlatButton(
+            child: Row(
+              children: <Widget>[Icon(Icons.arrow_back), Text(' Voltar')],
             ),
-            disabledColor: Colors.grey,
             onPressed:
                 controller.count == 0 ? null : controller.previousQuestion,
-            child: Text(
-              'Voltar',
+          ),
+          Expanded(child: SizedBox()),
+          Container(
+            height: 30,
+            width: (controller.questions.length * 24).toDouble(),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: controller.questions.length,
+              itemBuilder: (BuildContext context, int index) =>
+                  index == controller.count
+                      ? Icon(Icons.radio_button_checked)
+                      : Icon(Icons.radio_button_unchecked),
             ),
           ),
-          Expanded(
-            child: SizedBox(),
-          ),
-          RaisedButton(
+          Expanded(child: SizedBox()),
+          FlatButton(
             onPressed:
                 controller.selectedOpt == null ? null : controller.nextQuestion,
-            child: Text(
-              controller.isLastQuestion ? 'Finalizar' : 'Próxima',
+            child: Row(
+              children: <Widget>[
+                Text(controller.isLastQuestion ? 'Finalizar ' : 'Próxima'),
+                Icon(Icons.arrow_forward)
+              ],
             ),
           )
         ],

@@ -13,7 +13,7 @@ class ResultModule extends ChildModule {
         Router(
           Modular.initialRoute,
           child: (_, args) => ResultPage(
-            options: args.data,
+            details: args.data,
           ),
         ),
       ];

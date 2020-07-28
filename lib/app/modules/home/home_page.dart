@@ -13,13 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
-  //use 'controller' variable to access controller
 
   @override
   Widget build(BuildContext context) {
     ThemeUtils.init(context);
     SizeUtils.init(context);
-    Future.delayed(Duration.zero, () => Modular.to.pushReplacementNamed('/'));
+    Future.delayed(Duration.zero, () => Modular.to.pushReplacementNamed('/quiz'));
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

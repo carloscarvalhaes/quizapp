@@ -11,9 +11,9 @@ class AnswerButton extends OutlineButton {
           ),
           onPressed: onPressed,
           borderSide: BorderSide(
-            color: Colors.red,
+            color: Color(0xFF7159C1),
             style: BorderStyle.solid,
-            width: selected ? 10 : 0.0001,
+            width: selected ? 5 : 0.00001,
           ),
           child: Container(
             padding: EdgeInsets.all(10),
